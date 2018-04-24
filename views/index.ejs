@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container" id="body">
+    <h3 id="title" class="text-center">Add Todo</h3>
+    <form action="/todo/add" method="post">
+    <div class="text-center">
+        <label>Todo title:</label>
+        <br>
+        <input type="text" name="title" placeholder="Add title">
+      </div>
+      <div class="text-center">
+        <label class="text-center">Todo Description:</label>
+        <br>
+        <textarea name="description" placeholder="Add Description"></textarea>
+      </div>
+      <div class="text-center">
+      <button class="text-center" class="text-center" type="submit">Submit</button>
+      </div>
+    </form>
+    <ul>
+      <% docs.map((doc) => { %>
+        <li><%= doc.title %> - <%= doc.description %>
+          <br>
+          <a href="/todo/<%= doc._id %>">Show</a>
+          <a href="/todo/edit/<%= doc._id %>">Edit</a>
+          <a href="/todo/delete/<%= doc._id %>">Delete</a>
+        </li>
+        <% }); %>
+    </ul>
+  </div>
+  </body>
+</html>

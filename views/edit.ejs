@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container" id="body">
+    <h3 id="title" class="text-center">Edit Todo</h3>
+    <form action="/todo/update/<%=doc._id %>" method="POST">
+    <div class="text-center">
+        <label>Todo title:</label>
+        <br>
+        <input type="text" name="title" value="<%= doc.title %>" placeholder="Add Title">
+      </div>
+      <div class="text-center">
+        <label class="text-center">Todo Description:</label>
+        <br>
+        <textarea name="description" placeholder="Add Description"><%= doc.description %></textarea>
+      </div>
+      <div class="text-center">
+      <button class="text-center" class="text-center" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  </body>
+</html>
